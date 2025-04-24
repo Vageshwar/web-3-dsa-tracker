@@ -18,8 +18,6 @@
 
 // Explaination: There is only 1 pair  ( 3 , 1 ) that satisfy the condition arr[i] > 2*arr[j]
 
-
-let ans = 0;
 const merge = (arr, low, mid, high) => {
     let temp = [];
     let left = low;
@@ -32,7 +30,6 @@ const merge = (arr, low, mid, high) => {
         }
         else {
             temp.push(arr[right]);
-            ans += (mid - left + 1);
             right++;
         }
     }
@@ -51,17 +48,31 @@ const merge = (arr, low, mid, high) => {
     }
 }
 
+const countPairs = (arr, low, mid, high) => {
+    let right = mid + 1;
+    let cnt = 0;
+    for(let i = low; i <= mid; i++){
+        while(right <= high && arr[i] > 2*arr[right]) right++;
+        cnt += (right - (mid+1));
+    }
+    return cnt;
+}
+
 const mergeSort = (arr, low, high) => {
-    if(low >= high) return;
+    let cnt = 0;
+    if(low >= high) return 0;
     let mid = Math.floor((low + high) / 2);
-    mergeSort(arr, low, mid);
-    mergeSort(arr, mid+1, high);
-    merge(arr, low, mid, high)
+    cnt += mergeSort(arr, low, mid);
+    cnt += mergeSort(arr, mid+1, high);
+    cnt += countPairs(arr, low, mid, high);
+    merge(arr, low, mid, high);
+    return cnt;
 }
 
 function optimal(arr){
-    ans = 0;
     let n = arr.length;
-    mergeSort(arr, 0, n-1);
-    return ans;
+    return mergeSort(arr, 0, n-1);
 }
+
+console.log(optimal([1,3,2,3,1]));
+console.log(optimal([3,2,1,4]));
