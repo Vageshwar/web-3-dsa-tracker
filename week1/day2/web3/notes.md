@@ -1,0 +1,1 @@
+Watched Patrick Collins Video and explored Info about first transactions, hash algo (Keccak256 Algo)
