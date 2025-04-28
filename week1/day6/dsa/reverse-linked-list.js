@@ -1,6 +1,6 @@
 // Problem Statement: Problem Statement: Given the head of a singly linked list, write a program to reverse the linked list, and return the head pointer to the reversed list.
 
-import { makeLL, printLL } from "../../../utils/linked-list.js";
+import { makeLL, printLL, ListNode } from "../../../utils/linked-list.js";
 
 // Examples
 
@@ -36,6 +36,7 @@ var reverseList = function(head) {
         temp = temp.next;
     }
     printLL(prev);
+    return prev
 };
 
 function reverseLLRecursive(head){
@@ -50,6 +51,6 @@ function reverseLLRecursive(head){
 
 const node = makeLL([1,3,2,4]);
 printLL(node, "Original");
-const reverseNode = reverseLLRecursive(node);
+const reverseNode = reverseList(node);
 printLL(reverseNode, "Reverse");
 
