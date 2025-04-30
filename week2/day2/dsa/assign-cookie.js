@@ -21,5 +21,15 @@
 // You need to output 2.
 
 var findContentChildren = function(g, s) {
-    
+    g = g.sort((a,b) => a-b);
+    s = s.sort((a,b) => a-b);
+    let satisfied = 0;
+    let idx = 0;
+    while(idx < s.length && satisfied < g.length){
+        if(s[idx] >= g[satisfied]){
+            satisfied++;
+        }
+        idx++;
+    }
+    return satisfied;
 };
