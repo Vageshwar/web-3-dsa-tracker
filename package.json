@@ -1,0 +1,24 @@
+{
+  "name": "3-months-web3-and-dsa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vageshwar/web-3-dsa-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Vageshwar/web-3-dsa-tracker/issues"
+  },
+  "homepage": "https://github.com/Vageshwar/web-3-dsa-tracker#readme",
+  "dependencies": {
+    "datastructures-js": "^13.0.0"
+  }
+}
