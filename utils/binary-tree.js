@@ -29,3 +29,24 @@ export {root};
        6
      
 */
+
+export const root2 = new TreeNode(10);
+root2.left = new TreeNode(5);
+root2.left.left = new TreeNode(3);
+root2.left.right = new TreeNode(8);
+root2.left.right.left = new TreeNode(7);
+// right tree
+root2.right = new TreeNode(20);
+root2.right.left = new TreeNode(18);
+root2.right.right = new TreeNode(25);
+
+/**
+         10
+       /    \
+     5       20
+    / \     /  \
+   3   8   18  25
+      /
+     7
+
+ */
