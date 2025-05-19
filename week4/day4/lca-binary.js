@@ -4,7 +4,7 @@
 
 function lca(root, x, y){
     if(!root) return null;
-    if(root === p || root === q) return root;
+    if(root === x || root === y) return root;
 
     let left = lca(root.left, x,y);
     let right = lca(root.right, x,y);
