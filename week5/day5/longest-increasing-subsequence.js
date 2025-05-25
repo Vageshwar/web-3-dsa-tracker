@@ -24,17 +24,20 @@
  * @return {number}
  */
 var lengthOfLIS = function(nums) {
-    let dp = Array(n).fill(1);
-    let n = nums.length;
-    let maxNum = Number.MIN_SAFE_INTEGER;
-    for(let i = 1; i<n;i++){
-        if(nums[i-1] < nums[i]){
-            dp[i] =  dp[i-1]+1;
-            maxNum = Math.max(maxNum, nums[i]);
-            
-        }else{
-            dp[i] = dp[i]; 
-        }
-            
+    if(!nums || nums.length === 0){
+        return 0;
     }
+
+    const n = nums.length;
+    const dp = Array(n).fill(1);
+
+    for(let i = 1; i<n;i++){
+        for(let j = 0; j<i;j++){
+            if(nums[i] > nums[j]){
+                dp[i] = Math.max(dp[i], dp[j]+1);
+            }
+        }
+    }
+
+    return Math.max(...dp);
 };
