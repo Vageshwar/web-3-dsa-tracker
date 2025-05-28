@@ -23,7 +23,7 @@ function nonBreakingFloor(e, f){
             nonBreakingFloor(e-1, k-1),
             nonBreakingFloor(e, f-k)
         );
-        ans = Math,min(ans, temp);
+        ans = Math.min(ans, temp);
     }
 
     return ans;
