@@ -3,17 +3,17 @@
  * @param {string[]} queries
  * @return {string[]}
  */
-var spellchecker = function(wordlist, queries) {
-      const wordsPerfect = new Set();
+var spellchecker = function (wordlist, queries) {
+  const wordsPerfect = new Set();
   const wordsCap = new Map();
   const wordsVow = new Map();
 
-  const isVowel = c => ["a", "e", "i", "o", "u"].includes(c);
+  const isVowel = (c) => ["a", "e", "i", "o", "u"].includes(c);
 
-  const devowel = word =>
-    [...word].map(ch => (isVowel(ch) ? "*" : ch)).join("");
+  const devowel = (word) =>
+    [...word].map((ch) => (isVowel(ch) ? "*" : ch)).join("");
 
-  const solve = query => {
+  const solve = (query) => {
     if (wordsPerfect.has(query)) return query;
 
     const queryL = query.toLowerCase();
@@ -37,5 +37,5 @@ var spellchecker = function(wordlist, queries) {
   }
 
   // Answer each query
-  return queries.map(q => solve(q));
+  return queries.map((q) => solve(q));
 };
